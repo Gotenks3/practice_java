@@ -8,6 +8,7 @@ public record TaskDTO(
         String description,
         String status
 ) {
+
     public static TaskDTO toDTO(TaskEntity entity) {
         return new TaskDTO(
                 entity.id(),

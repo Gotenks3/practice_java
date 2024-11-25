@@ -1,2 +1,13 @@
-INSERT INTO tasks (summary, description, status) VALUES ('Spring Boot を学ぶ', 'TODO アプリを作る', 'DONE');
-INSERT INTO tasks (summary, description, status) VALUES ('Spring Security を学ぶ', 'ログイン機能を作る', 'TODO');
+INSERT INTO tasks (summary, description, status) VALUES ('フェザー級①', '鈴木千尋', 'DONE');
+INSERT INTO tasks (summary, description, status) VALUES ('フェザー級②', 'クレベルコイケ', 'TODO');
+
+
+Vscode,
+Git,
+GitHub/GitLab,
+Docker,
+Vagrant,
+VirtualBox,
+Sourcetree,
+WordPress,
+Swagger
