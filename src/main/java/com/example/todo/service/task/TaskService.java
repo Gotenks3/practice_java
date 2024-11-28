@@ -1,15 +1,26 @@
 package com.example.todo.service.task;
 
+import com.example.todo.repository.task.TaskRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
+import java.util.Optional;
+
 @Service
+@RequiredArgsConstructor
+
 public class TaskService {
 
-    public List<TaskEntity> find() {
-        var task1 = new TaskEntity(1L, "フェザー級①", "クレベル・コイケ", TaskStatus.TODO);
-        var task2 = new TaskEntity(2L, "フェザー級②", "ラジャブアリ・シェイドラフ", TaskStatus.DOING);
+    private final TaskRepository taskRepository;
 
-        return List.of(task1, task2);
+
+    public List<TaskEntity> find() {
+        return taskRepository.select();
+    }
+
+    public Optional<TaskEntity> findById(@PathVariable("id") long id) {
+        return taskRepository.selectById(id);
     }
 }
