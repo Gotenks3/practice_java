@@ -3,6 +3,7 @@ package com.example.todo.service.task;
 import com.example.todo.repository.task.TaskRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
@@ -22,5 +23,12 @@ public class TaskService {
 
     public Optional<TaskEntity> findById(@PathVariable("id") long id) {
         return taskRepository.selectById(id);
+    }
+
+    @Transactional
+    public void create(TaskEntity newEntity) {
+        taskRepository.insert(newEntity);
+
+//        throw new IllegalArgumentException("ニャース");
     }
 }
