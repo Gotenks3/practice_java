@@ -28,7 +28,10 @@ public class TaskService {
     @Transactional
     public void create(TaskEntity newEntity) {
         taskRepository.insert(newEntity);
+    }
 
-//        throw new IllegalArgumentException("ニャース");
+    @Transactional
+    public void update(TaskEntity entity) {
+        taskRepository.update(entity);
     }
 }
